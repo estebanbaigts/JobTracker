@@ -41,7 +41,6 @@ function App() {
               whileHover={{ rotate: 360 }}
               transition={{ duration: 0.5 }}
             >
-              <BriefcaseIcon className="w-8 h-8 text-blue-600 mr-3" />
             </motion.div>
             <h1 className="text-3xl font-bold bg-gradient-to-r from-blue-600 to-blue-800 bg-clip-text text-transparent">
               Job Tracker

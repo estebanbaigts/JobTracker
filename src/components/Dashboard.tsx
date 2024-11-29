@@ -1,5 +1,5 @@
 import React from 'react';
-import { BarChart3, BriefcaseIcon, Clock, CheckCircle2 } from 'lucide-react';
+import { BarChart3, BriefcaseIcon, Clock, CheckCircle2, X} from 'lucide-react';
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 import { Job } from '../types/job';
@@ -70,8 +70,8 @@ export function Dashboard({ jobs }: DashboardProps) {
   const stats = {
     total: jobs.length,
     pending: jobs.filter(job => job.status === 'pending').length,
-    interview: jobs.filter(job => job.status === 'interview').length,
     accepted: jobs.filter(job => job.status === 'accepted').length,
+    rejected: jobs.filter(job => job.status === 'rejected').length,
   };
 
   return (
@@ -91,17 +91,17 @@ export function Dashboard({ jobs }: DashboardProps) {
         delay={0.2}
       />
       <StatCard
-        icon={BarChart3}
-        label="Interviews"
-        value={stats.interview}
-        color="text-purple-500"
-        delay={0.4}
-      />
-      <StatCard
         icon={CheckCircle2}
         label="Accepted"
         value={stats.accepted}
         color="text-green-500"
+        delay={0.6}
+      />
+      <StatCard
+        icon={X}
+        label="Rejected"
+        value={stats.rejected}
+        color="text-red-500"
         delay={0.6}
       />
     </div>

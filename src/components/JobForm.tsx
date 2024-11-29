@@ -132,7 +132,6 @@ export function JobForm({ onSubmit }: JobFormProps) {
                   className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200"
                 >
                   <option value="pending">Pending</option>
-                  <option value="interview">Interview</option>
                   <option value="rejected">Rejected</option>
                   <option value="accepted">Accepted</option>
                 </select>

@@ -11,7 +11,6 @@ interface JobCardProps {
 
 const statusColors = {
   pending: 'bg-yellow-100 text-yellow-800',
-  interview: 'bg-blue-100 text-blue-800',
   rejected: 'bg-red-100 text-red-800',
   accepted: 'bg-green-100 text-green-800',
 };
@@ -60,7 +59,6 @@ export function JobCard({ job, onStatusChange }: JobCardProps) {
             className={`${statusColors[job.status]} px-3 py-1 rounded-full text-sm font-medium cursor-pointer transition-colors duration-200`}
           >
             <option value="pending">Pending</option>
-            <option value="interview">Interview</option>
             <option value="rejected">Rejected</option>
             <option value="accepted">Accepted</option>
           </motion.select>
