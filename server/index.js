@@ -9,11 +9,17 @@ import { dirname, join } from 'path';
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const db = new Database(join(__dirname, 'database.sqlite'));
 const app = express();
-const PORT = 10000;
-const JWT_SECRET = '9zOkaX5f4tDQf0asb2+qPfXqC9GZmkOUF1EuyvNzAzY=9zOkaX5f4tDQf0asb2+qPfXqC9GZmkOUF1EuyvNzAzY=';
+const PORT = process.env.PORT || 3000;
+const JWT_SECRET = process.env.JWT_SECRET || 'your-secret-key';
 
+// Middleware
 app.use(cors());
 app.use(express.json());
+
+// Serve static files in production
+if (process.env.NODE_ENV === 'production') {
+  app.use(express.static(join(__dirname, '../dist')));
+}
 
 // Initialize database
 db.exec(`
@@ -119,6 +125,13 @@ app.delete('/api/jobs/:id', authenticateToken, (req, res) => {
   stmt.run(req.params.id, req.user.id);
   res.json({ message: 'Job deleted successfully' });
 });
+
+// Handle React routing in production
+if (process.env.NODE_ENV === 'production') {
+  app.get('*', (req, res) => {
+    res.sendFile(join(__dirname, '../dist/index.html'));
+  });
+}
 
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);
