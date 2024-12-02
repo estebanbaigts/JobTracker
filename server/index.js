@@ -9,7 +9,7 @@ import { dirname, join } from 'path';
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const db = new Database(join(__dirname, 'database.sqlite'));
 const app = express();
-const PORT = 5000;
+const PORT = 10000;
 const JWT_SECRET = '9zOkaX5f4tDQf0asb2+qPfXqC9GZmkOUF1EuyvNzAzY=9zOkaX5f4tDQf0asb2+qPfXqC9GZmkOUF1EuyvNzAzY=';
 
 app.use(cors());
