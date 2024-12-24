@@ -72,6 +72,7 @@ Ajoutez ce fichier `README.md` à la racine de votre projet pour qu'il soit affi
 
 
 
+
 Vous avez dit :
 fais tout en mode .md
 ChatGPT a dit :
@@ -150,3 +151,19 @@ Ce projet est distribué sous la licence MIT. Consultez le fichier LICENSE pour 
 Ajoutez ici une capture d'écran de l'application si possible pour donner un aperçu visuel.
 
 Créé avec ❤️ par Esteban Baigts.
+
+go
+Copier le code
+
+Collez ce contenu dans un fichier nommé `README.md` à la racine de votre projet pour qu'il soit automatiquement détecté et affiché sur GitHub.
+
+
+
+
+
+
+
+
+
+
+
